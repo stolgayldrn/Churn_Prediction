@@ -79,6 +79,8 @@ There is no need for dropping features due to correlation matrix result.
 ###SVC
 - Not enough time to train the SVM model.
 
+
+
 ##Outputs
 
 The best model with baseline parameters is the Catboost algorithm. 
