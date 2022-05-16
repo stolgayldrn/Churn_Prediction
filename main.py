@@ -5,6 +5,8 @@ __since__ = '15-05-2022'
 
 import argparse
 import os.path
+import sys
+from distutils.util import strtobool
 from datetime import date
 import pandas as pd
 from catboost import CatBoostClassifier
@@ -42,12 +44,25 @@ def print_scores(alg_name, y_true, y_pred):
 if __name__ == "__main__":
 
     parser = argparse.ArgumentParser()
-    parser.add_argument('--data_reprocess', type=bool, default=False)
+    parser.add_argument("--data_reprocess", type=str, default="False")
+    arguments = parser.parse_args()
+
+    #parser.add_argument('--data_reprocess', default = 'False', choices=('True', 'False'))
     args, unknown = parser.parse_known_args()
+    data_reprocess = False
+
+    if args.data_reprocess == 'True':
+       data_reprocess = True
+    elif args.data_reprocess == 'False':
+        data_reprocess = False
+    else:
+        print("wrong data_reprocess input")
+        sys.exit()
 
     # 1 - Reading Data
     # 1.1. Read all data
-    if args.data_reprocess:
+    if data_reprocess:
+        print("Data reprocessing")
         labeled_data_dir = os.path.join('data', 'machine_learning_challenge_labeled_data.csv')
         labeled_data = pd.read_csv(labeled_data_dir, delimiter=',')
 
@@ -72,10 +87,7 @@ if __name__ == "__main__":
         order_data['order_year'] = order_data['order_date'].dt.year
         order_data['order_month'] = order_data['order_date'].dt.month
         order_data['order_day'] = order_data['order_date'].dt.day
-        print(f"{order_data['date_from_begining'][0]}----{order_data['order_date'][0]} -->{order_data['order_date'].dtype}")
-        print(f"year#{order_data['order_year'][0]}#month#{order_data['order_month'][0]}#day#{order_data['order_day'][0]}")
-        print(f"hour{order_data['order_hour'][0]}")
-        print(order_data.dtypes)
+        print(f'data types: {order_data.dtypes}')
 
         # I add an "is_returning" column to use as a target label in the ordered_data data frame by mapping customer_id
         # from the labeled_data frame.
