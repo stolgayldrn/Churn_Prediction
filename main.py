@@ -80,14 +80,16 @@ if __name__ == "__main__":
         # I add an "is_returning" column to use as a target label in the ordered_data data frame by mapping customer_id
         # from the labeled_data frame.
         # However, the initial mapping is not enough to carry information about "is_returning_customer."
-        # Therefore, I updated the is_returning value to 1 if the next purchase exists in the last 6 months, otherwise to 0.
+        # Therefore, I updated the is_returning value to 1 if the next purchase exists in the last 6 months,
+        # otherwise to 0.
         # If other purchases do not exist or if the purchase is the last one, then keep information from labeled_data.
         order_data['is_returning'] = order_data['customer_id'].map(
             labeled_data.set_index('customer_id')['is_returning_customer'])
         for index, row in order_data.iterrows():
             if index == len(order_data.index) - 1: break
             next_row = order_data.iloc[index + 1]
-            if row['customer_id'] == next_row['customer_id'] and is_lth_6month(next_row['order_date'], row['order_date']):
+            if row['customer_id'] == next_row['customer_id'] and \
+                    is_lth_6month(next_row['order_date'], row['order_date']):
                 row['is_returning'] = 1
             else:
                 row['is_returning'] = 0
@@ -190,6 +192,4 @@ if __name__ == "__main__":
         model.fit(X_train, y_train)
         y_pred = model.predict(X_test)
         print_scores(name, y_test, y_pred)
-    # Load best model
 
-    # Test model
