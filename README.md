@@ -58,11 +58,15 @@ There is no need for dropping features due to correlation matrix result.
 - precision:  0.662633868196937
 - recall:  0.6666462375740044
 - f1_score:  0.6510745175378062
+
+
 ###RandomForestClassifier
 - accuracy:  0.7370645817442156
 - precision:  0.7585634932880728
 - recall:  0.723128592966672
 - f1_score:  0.7371469874440894
+
+
 ###GradientBoostingClassifier
 - accuracy:  0.7273201118738876
 - precision:  0.7424874948286886
