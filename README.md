@@ -45,12 +45,14 @@ There is no need for dropping features due to correlation matrix result.
 - recall:  0.7038843876788057
 - f1_score:  0.60585361194275
 
-### KNeighborsClassifier
 
+### KNeighborsClassifier
 - accuracy:  0.61849097381134
 - precision:  0.6254216783379476
 - recall:  0.659022100192442
 - f1_score:  0.6177969385657235
+
+
 ###DecisionTreeClassifier
 - accuracy:  0.651118738876176
 - precision:  0.662633868196937
@@ -66,18 +68,25 @@ There is no need for dropping features due to correlation matrix result.
 - precision:  0.7424874948286886
 - recall:  0.7259600652096638
 - f1_score:  0.7274007965766665
+
+
 ###LGBMClassifier
 - accuracy:  0.7298627002288329
 - precision:  0.745056240360139
 - recall:  0.7282889817731635
 - f1_score:  0.7299431113257417
+
+
 ###CatBoostClassifier
 - accuracy:  **0.7376366641240784**
 - precision:  **0.7554243130893238**
 - recall:  **0.7306178983366632**
 - f1_score: **0.7377266412426771**
+
+
 ###SVC
 - Not enough time to train the SVM model.
+
 
 
 
