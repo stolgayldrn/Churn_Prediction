@@ -1,4 +1,4 @@
-# delivery_hero_casestudy S.Tolga Yildiran
+# Churn Prediction
 
 ## How to test the python file
 requriments.txt is added to the repository
