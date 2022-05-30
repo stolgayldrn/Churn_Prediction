@@ -1,7 +1,5 @@
 # -*- coding: utf-8 -*-
 
-__info__ = 'Delivery Hero - Case Study-- S.Tolga Yildiran'
-__since__ = '15-05-2022'
 
 import argparse
 import os.path
