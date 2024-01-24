@@ -24,7 +24,7 @@ numexpr @ file:///C:/ci/numexpr_1640704420125/work
 numpy @ file:///C:/ci/numpy_and_numpy_base_1650959324056/work
 packaging @ file:///tmp/build/80754af9/packaging_1637314298585/work
 pandas @ file:///C:/ci/pandas_1641461312795/work
-Pillow==9.0.1
+Pillow==10.2.0
 pipreqs==0.4.11
 pyparsing @ file:///tmp/build/80754af9/pyparsing_1635766073266/work
 python-dateutil @ file:///tmp/build/80754af9/python-dateutil_1626374649649/work
